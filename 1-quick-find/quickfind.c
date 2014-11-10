@@ -33,7 +33,10 @@ void _union(int p, int q, int *nodes, int size) {
   }
 
   print_nodes(nodes, size);
+}
 
+int connected(int p, int q, int *nodes) {
+  return nodes[p] == nodes[q];
 }
 
 int main(void) {
@@ -44,6 +47,11 @@ int main(void) {
   print_nodes(nodes, NODE_COUNT);
 
   _union(3, 4, nodes, NODE_COUNT);
+  _union(4, 1, nodes, NODE_COUNT);
+
+  printf("%d\n", connected(1, 3, nodes));
+  printf("%d\n", connected(1, 7, nodes));
 
   return 0;
 }
+
